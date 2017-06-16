@@ -1,14 +1,22 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Documento sin título</title>
-</head>
-
-<body>
-<p>&lt;?php</p>
-<p>echo '&lt;p id =&quot;nombre&quot;&gt; '.$_GET['nombre'}</p>
-<p>print_r($_REQUEST);</p>
-<p>?&gt;</p>
-</body>
-</html>
+<?php
+  	$n1=(isset($_REQUEST["n1"])?$_REQUEST["n1"]:0);
+ 	$n2=(isset($_REQUEST["n2"])?$_REQUEST["n2"]:0);
+ 	echo $n1+$n2;
+ 	$n2=(isset($_REQUEST["n2"])?$_REQUEST["n2"]:0);	
+     $op=(isset($_REQUEST['operacion'])?$_REQUEST['operacion']:null);
+ 	
+ 	if($op=='+'){
+ 		$res=$n1+$n2;
+ 	} else{
+ 		if($op=='-'){
+ 			$res=$n1-$n2;
+ 		}elseif($op=='*'){
+ 			$res=$n1*$n2;
+ 		}elseif($op=='/'){
+ 			$res=$n1/$n2;
+ 		}else{
+ 			$res="Operación inválida";
+ 		}
+ 	}
+ 
+  ?> 
